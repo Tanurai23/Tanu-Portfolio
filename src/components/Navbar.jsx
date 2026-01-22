@@ -115,32 +115,48 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </div>
         </div>
 
-        {/* Mobile Menu - FIXED: Added curly braces and AnimatePresence */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className={`w-full overflow-hidden lg:hidden mt-2 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'}`}
-            >
-              <div className="px-4 py-3 space-y-2">
-                {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.link}
-                    onClick={() => handleNavClick(item.name)}
-                    className={`block py-3 px-4 rounded-lg text-center font-medium ${
-                      activeSection === item.name.toLowerCase() ? 'bg-orange-500/10 ' + colors.textActive : colors.textSecondary
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Mobile Menu */}
+<AnimatePresence>
+  {isMenuOpen && (
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: 'auto', opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      className={`w-full overflow-hidden lg:hidden mt-2 rounded-xl ${
+        darkMode ? 'bg-gray-800/95' : 'bg-white/95'
+      } backdrop-blur-md shadow-xl border ${
+        darkMode ? 'border-gray-700' : 'border-gray-200'
+      }`}
+    >
+      <div className="px-4 py-4 space-y-2">
+        {navItems.map((item) => (
+          <a
+            key={item.name}
+            href={item.link}
+            onClick={() => handleNavClick(item.name)}
+            className={`block py-3 px-4 rounded-lg text-center font-medium transition-all ${
+              activeSection === item.name.toLowerCase()
+                ? 'bg-orange-500/10 ' + colors.textActive
+                : colors.textSecondary
+            }`}
+          >
+            {item.name}
+          </a>
+        ))}
+
+        {/* --- ADDED HIRE ME BUTTON FOR MOBILE --- */}
+        <motion.a
+          href="#contact"
+          onClick={() => setIsMenuOpen(false)}
+          whileTap={{ scale: 0.95 }}
+          className={`block mt-4 py-3 px-4 text-center font-bold rounded-lg bg-linear-to-r ${colors.button} text-white shadow-md`}
+        >
+          Hire Me
+        </motion.a>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
       </motion.nav>
     </div>
   );
