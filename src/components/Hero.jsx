@@ -2,7 +2,7 @@ import React from "react";
 import { Github, Linkedin, Twitter, Instagram, Download, Mail } from "lucide-react";
 import CV from "../assets/Tanu_Rai_CV.pdf";
 import HeroImage from "../assets/Me.png";
-import hi from "../assets/hi.png";
+import hi from "../assets/Hi.png";
 
 const Hero = ({ darkMode }) => {
   const socialIcons = [
@@ -66,7 +66,7 @@ const Hero = ({ darkMode }) => {
             <div className="w-full pt-4 sm:pt-6">
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="700">
                 <a href={CV} download className="w-full sm:w-auto">
-                  <button className="w-full sm:w-auto inline-flex items-center justify-center text-white bg-gradient-to-r from-orange-400 to-amber-500 py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:shadow-[0_0_40px_rgba(255,165,0,0.7)]">
+                  <button className="w-full sm:w-auto inline-flex items-center justify-center text-white bg-linear-to-r from-orange-400 to-amber-500 py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:shadow-[0_0_40px_rgba(255,165,0,0.7)]">
                     <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Download CV
                   </button>
@@ -83,24 +83,30 @@ const Hero = ({ darkMode }) => {
           </div>
 
           {/* RIGHT SIDE: Image Content */}
-          <div
-            className="lg:w-1/2 w-full flex justify-center lg:justify-end mt-8 lg:mt-0"
-            data-aos="fade-left"
-            data-aos-delay="400"
-          >
-            <div className="relative w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
-              <img
-                src={HeroImage}
-                alt="3D Girl Illustration"
-                className="w-full h-auto object-contain transform hover:scale-105 transition-transform duration-500"
-              />
-              <img 
-                src={hi} 
-                alt="Hi icon"
-                className="absolute top-0 -left-6 sm:left-0 w-16 h-16 sm:w-35 sm:h-45 object-contain animate-bounce opacity-90 z-10"
-              />
-            </div>
-          </div>
+<div
+  className="lg:w-1/2 w-full flex justify-center lg:justify-end mt-12 lg:mt-0"
+  data-aos="fade-left"
+  data-aos-delay="400"
+>
+  {/* Standard max-width classes to remove linter warnings */}
+  <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md">
+    
+    {/* Main Illustration */}
+    <img
+      src={HeroImage}
+      alt="3D Girl Illustration"
+      className="w-full h-auto object-contain transform hover:scale-105 transition-transform duration-500"
+    />
+
+    {/* Hi Icon - Repositioned and resized to valid Tailwind classes */}
+    <img 
+      src={hi} 
+      alt="Hi icon"
+      className="absolute -top-8 -left-4 sm:-top-10 sm:-left-8 w-20 h-20 sm:w-28 sm:h-28 object-contain animate-bounce opacity-90 z-20"
+    />
+    
+  </div>
+</div>
 
         </div>
         
