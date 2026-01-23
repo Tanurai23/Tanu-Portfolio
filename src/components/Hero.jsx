@@ -57,9 +57,8 @@ const Hero = ({ darkMode }) => {
             </h4>
 
             <p className={`mb-6 max-w-xl text-center lg:text-left ${theme.textSecondary}`}>
-              I’m a frontend developer focused on building scalable, clean, and intuitive web applications.
-              I specialize in React, modern CSS, and state-driven UI design. I enjoy working on
-              product-focused applications, dashboards, and real-world user flows.
+              Building intuitive, scalable web experiences with React.
+Focused on performance, accessibility, and product-driven UI.
             </p>
 
             {/* Buttons */}
