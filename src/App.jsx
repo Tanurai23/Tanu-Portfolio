@@ -4,16 +4,17 @@ import 'aos/dist/aos.css'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
+import Skills from './components/Skills.jsx'
+
 
 const App = () => {
   const[darkMode, setDarkMode] = useState (true);
   
-  useEffect(() => {
-    AOS.init({ duration: 1000, 
-      once: false,
-      offset: 100
+ useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true, // This ensures it doesn't disappear when you scroll back up
     });
-   document.documentElement.classList.add('dark');
   }, []);
 
   const toggleDarkMode = () => {  
@@ -30,6 +31,7 @@ const App = () => {
      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
      <Hero darkMode={darkMode} />
      <About darkMode={darkMode} />
+     <Skills darkMode={darkMode} />
     </div>
   )
 }

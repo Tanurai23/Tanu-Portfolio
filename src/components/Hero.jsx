@@ -5,6 +5,7 @@ import HeroImage from "../assets/Me.png";
 import hi from "../assets/Hi.png";
 
 const Hero = ({ darkMode }) => {
+  
   const socialIcons = [
     { icon: Github, link: "https://github.com/Tanurai23" },
     { icon: Linkedin, link: "https://www.linkedin.com/in/tanu-rai-aa3b01204/" },
@@ -23,6 +24,8 @@ const Hero = ({ darkMode }) => {
         textSecondary: "text-gray-700",
         decorativeCircle: "from-orange-400 opacity-20",
       };
+
+      
 
   return (
     <div className="relative overflow-hidden min-h-screen flex flex-col">
