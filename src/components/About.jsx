@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import about from "../assets/AboutMe1.png";
+import about from "../assets/About.png";
 
 const About = ({ darkMode }) => {
   return (
