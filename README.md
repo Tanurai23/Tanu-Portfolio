@@ -22,7 +22,7 @@ A high-performance, responsive developer portfolio website built with **React**,
 This portfolio showcases my skills, projects, and contact information with modern UI animations and dynamic dark mode support.
 
 🔗 **Live Demo:** 
-https://vercel.com/tanu-rais-projects/tanu-portfolio
+https://tanu-portfolio-puce.vercel.app/
 
 ---
 
