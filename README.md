@@ -21,7 +21,8 @@ If you are developing a production application, we recommend using TypeScript wi
 A high-performance, responsive developer portfolio website built with **React**, **Vite**, and **Tailwind CSS**.  
 This portfolio showcases my skills, projects, and contact information with modern UI animations and dynamic dark mode support.
 
-🔗 **Live Demo:** https://tanu-portfolio-puce.vercel.app
+🔗 **Live Demo:** 
+https://vercel.com/tanu-rais-projects/tanu-portfolio
 
 ---
 
