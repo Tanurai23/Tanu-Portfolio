@@ -11,7 +11,7 @@ const Projects = ({ darkMode }) => {
       id: 1,
       title: "AI Interview Simulator",
       desc:
-        "Built a production-ready AI Interview Simulator using React, featuring timed interview sessions, state-driven navigation, AI-based scoring, analytics, and a responsive SaaS-style UI.",
+        "Built a production-ready AI Interview Simulator using React, featuring timed interview sessions, state-driven navigation, AI-based scoring, and a responsive SaaS-style UI.",
       tags: ["React", "Tailwind CSS", "Zustand", "Vercel"],
       image: interviewAI,
       github: "https://github.com/Tanurai23/AI-Interview-Experience-Simulator",
@@ -21,7 +21,7 @@ const Projects = ({ darkMode }) => {
       id: 2,
       title: "Pixy Weather",
       desc:
-        "A modern weather forecasting app using OpenWeather API with real-time data, clean UI, and performance-optimized state management.",
+        "A modern, pixel-inspired weather app built with React & Vite, featuring live weather, 7-day forecasts, AQI, weather data visualization (charts) and responsive design using OpenWeatherMap API.",
       tags: ["React", "OpenWeather API", "Zustand", "Vercel"],
       image: pixelForecast,
       github: "https://github.com/Tanurai23/Pixy-Weather",
