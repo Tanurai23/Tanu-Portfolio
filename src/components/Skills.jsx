@@ -111,7 +111,7 @@ const Skills = ({ darkMode }) => {
                   style={{ backgroundColor: darkMode ? "#374151" : "#e5e7eb" }}
                 >
                   <div
-                    className={`h-full rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000`}
+                    className={`h-full rounded-full bg-linear-to-r ${skill.color} transition-all duration-1000`}
                     style={{ width: `${skill.level}%` }}
                   ></div>
                 </div>

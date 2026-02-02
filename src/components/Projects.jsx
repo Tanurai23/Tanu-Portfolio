@@ -1,23 +1,31 @@
 import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
+// ✅ Correct image imports
+import interviewAI from "../assets/intervuAi.png";
+import pixelForecast from "../assets/Pixy.png";
+
 const Projects = ({ darkMode }) => {
   const projects = [
     {
       id: 1,
       title: "AI Interview Simulator",
       desc:
-        "Built a production-ready AI Interview Simulator using React, featuring timed interview sessions, state-driven navigation, progress tracking, and responsive UI.",
+        "Built a production-ready AI Interview Simulator using React, featuring timed interview sessions, state-driven navigation, AI-based scoring, analytics, and a responsive SaaS-style UI.",
       tags: ["React", "Tailwind CSS", "Zustand", "Vercel"],
-      image: "https://via.placeholder.com/600x400",
+      image: interviewAI,
+      github: "https://github.com/Tanurai23/AI-Interview-Experience-Simulator",
+      demo: "https://ai-interview-experience-simulator.vercel.app/",
     },
     {
       id: 2,
-      title: "Pixel Forecast",
+      title: "Pixy Weather",
       desc:
-        "A React-based platform simulating real interview flows with timed questions, state-driven navigation, and a polished UI.",
-      tags: ["React", "OpenWeatherAPI", "Zustand", "Vercel"],
-      image: "https://via.placeholder.com/600x400",
+        "A modern weather forecasting app using OpenWeather API with real-time data, clean UI, and performance-optimized state management.",
+      tags: ["React", "OpenWeather API", "Zustand", "Vercel"],
+      image: pixelForecast,
+      github: "https://github.com/Tanurai23/Pixy-Weather",
+      demo: "https://pixy-weather.vercel.app/",
     },
   ];
 
@@ -29,7 +37,7 @@ const Projects = ({ darkMode }) => {
     >
       <div className="container mx-auto px-4">
         {/* Heading */}
-        <div className="text-center mb-10" data-aos="fade">
+        <div className="text-center mb-12">
           <h2
             className="text-3xl sm:text-4xl font-bold mb-3"
             style={{ color: darkMode ? "white" : "#1f2937" }}
@@ -46,17 +54,16 @@ const Projects = ({ darkMode }) => {
               Projects
             </span>
           </h2>
-
           <p
             className="max-w-xl mx-auto"
             style={{ color: darkMode ? "#d1d5db" : "#6b7280" }}
           >
-            A showcase of my recent work
+            A showcase of real-world, production-ready applications
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={project.id}
@@ -66,11 +73,10 @@ const Projects = ({ darkMode }) => {
                   : "linear-gradient(to right, #ffffff, #f3f4f6)",
                 borderColor: darkMode ? "#374151" : "#e5e7eb",
               }}
-              className="group rounded-xl border transition-all duration-300 hover:border-orange-500/50"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              className="group rounded-xl border overflow-hidden transition-all duration-300 hover:border-orange-500/50 hover:-translate-y-1"
             >
-              <div className="h-36 overflow-hidden rounded-t-xl">
+              {/* Image */}
+              <div className="h-40 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -78,7 +84,8 @@ const Projects = ({ darkMode }) => {
                 />
               </div>
 
-              <div className="p-4">
+              {/* Content */}
+              <div className="p-5">
                 <h3
                   className="text-lg font-bold mb-2"
                   style={{ color: darkMode ? "white" : "#1f2937" }}
@@ -87,82 +94,77 @@ const Projects = ({ darkMode }) => {
                 </h3>
 
                 <p
-                  className="text-sm mb-3"
+                  className="text-sm mb-4 leading-relaxed"
                   style={{ color: darkMode ? "#d1d5db" : "#6b7280" }}
                 >
                   {project.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
+                      className="px-2 py-1 text-xs rounded-full"
                       style={{
                         backgroundColor: darkMode ? "#374151" : "#f3f4f6",
                         color: darkMode ? "#d1d5db" : "#4b5563",
                       }}
-                      className="px-2 py-1 text-xs rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-2">
+                {/* Actions */}
+                <div className="flex gap-3">
                   <a
-                    href="#"
-                    style={{
-                      backgroundColor: darkMode ? "#374151" : "#f3f4f6",
-                      color: darkMode ? "white" : "#374151",
-                    }}
-                    className="flex-1 flex items-center justify-center gap-1.5
-                    px-3 py-2 text-sm rounded-lg hover:opacity-90 transition-colors"
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2
+                      px-3 py-2 text-sm rounded-lg
+                      bg-gray-200 dark:bg-slate-700
+                      text-gray-800 dark:text-white
+                      hover:opacity-90 transition"
                   >
-                    <FaGithub className="text-sm" />
-                    <span>Code</span>
+                    <FaGithub />
+                    Code
                   </a>
 
-                  {/*Demo*/}
                   <a
-                    href="#"
-                    style={{
-                      background: 'linear-gradient(to right, #f97316, #f59e0b)',
-                      color: darkMode ? "white" : "#374151",
-                    }}
-                    className="flex-1 flex items-center justify-center gap-1.5
-                    px-3 py-2 text-white text-sm rounded-lg hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-                    data-aos="zoom-in"
-                    data-aos-delay="400"
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2
+                      px-3 py-2 text-sm rounded-lg text-white
+                      bg-linear-to-r from-orange-500 to-amber-500
+                      hover:shadow-lg hover:shadow-orange-500/30 transition-all"
                   >
-                    <FaExternalLinkAlt className="text-sm" />
-                    <span>Demo</span>
+                    <FaExternalLinkAlt />
+                    Demo
                   </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div
-        className='text-center mt-10'>
-             <a
-                    href="#"
-                    style={{
-                      background: 'linear-gradient(to right, #f97316, #f59e0b)',
-                      
-                    }}
-                    className="inline-flex items-center font-semibold gap-2
-                    px-7 py-4 text-white text-sm rounded-full hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-                    data-aos="zoom-in"
-                    data-aos-delay="400"
-                  >
-                    <FaGithub />
-                    <span>View All Projects</span>
-                    <FaExternalLinkAlt className='text-sm' />
 
-                  </a>
-
+        {/* View All */}
+        <div className="text-center mt-12">
+          <a
+            href="https://github.com/Tanurai23"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3
+              px-8 py-4 rounded-full text-white font-semibold
+              bg-linear-to-r from-orange-500 to-amber-500
+              hover:shadow-lg hover:shadow-orange-500/30 transition-all"
+          >
+            <FaGithub />
+            View All Projects
+            <FaExternalLinkAlt className="text-sm" />
+          </a>
         </div>
       </div>
     </section>

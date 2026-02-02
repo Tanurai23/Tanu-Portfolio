@@ -43,7 +43,7 @@ const Footer = ({ darkMode }) => {
                     ? "bg-[#111827] text-white"
                     : "bg-white text-[#374151]"
                 }
-                hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500
+                hover:bg-linear-to-r hover:from-orange-500 hover:to-amber-500
                 hover:text-white`}
               >
                 <Icon />
