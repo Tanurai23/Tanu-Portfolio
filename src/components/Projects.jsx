@@ -2,7 +2,7 @@ import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 // ✅ Correct image imports
-import interviewAI from "../assets/intervuAi.png";
+import interviewAI from "../assets/intervuAI.png";
 import pixelForecast from "../assets/Pixy.png";
 
 const Projects = ({ darkMode }) => {
